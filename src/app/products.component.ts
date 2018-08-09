@@ -1,21 +1,22 @@
-import { ProductsService } from './products.service';
+import { ProductService } from './product.service';
 import { Component, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-products',
   template:
   `<h2>Products</h2>
-  <ul>
-  <li *ngFor="let product of products">
-  {{product}}
-  </li>
-  </ul>`
+  <div *ngFor="let product of products">
+  <app-product [data]="product">
+  </app-product>
+  </div>
+  `,
+  providers: [ProductService],
 })
 
 export class ProductsComponent {
   products;
 
-  constructor(productService: ProductsService) {
+  constructor(productService: ProductService) {
     this.products = productService.getProducts();
   }
 

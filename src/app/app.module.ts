@@ -1,27 +1,27 @@
-import { RatingComponent } from './rating.component';
+
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AdComponent } from './ad.component';
 import { ProductsComponent } from './products.component';
+import { ProductComponent } from './product.component';
+import { RatingComponent } from './rating.component';
 
-import { AdService } from './ad.service';
-import { ProductsService } from './products.service';
-
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    AdComponent,
-    RatingComponent
+    RatingComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [ProductsService, AdService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
