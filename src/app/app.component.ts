@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
     <div class="button">Learn More</div>
   </app-jumbotron>
   <app-products></app-products>
+  <app-user-form></app-user-form>
   `
 })
 export class AppComponent {
