@@ -5,17 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template:
   `
-  <app-jumbotron>
-    <div class="heading">
-    {{title}}
-    </div>
-      <div class="body">
-        This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
-      </div>
-    <div class="button">Learn More</div>
-  </app-jumbotron>
-  <app-products></app-products>
-  <app-user-form></app-user-form>
+  <app-login></app-login>
   `
 })
 export class AppComponent {

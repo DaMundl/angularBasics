@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 
 import { TruncatePipe } from './truncate.pipe';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,8 +10,9 @@ import { ProductComponent } from './product.component';
 import { RatingComponent } from './rating.component';
 import { UserFormComponent } from './user-form.component';
 import { JumbotronComponent } from './jumbotron.component';
+import { LoginComponent } from './login.component';
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductService } from './product.service';
 
 
@@ -23,13 +25,15 @@ import { ProductService } from './product.service';
     ProductComponent,
     TruncatePipe,
     JumbotronComponent,
-    UserFormComponent
+    UserFormComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
