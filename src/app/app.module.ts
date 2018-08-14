@@ -14,6 +14,8 @@ import { LoginComponent } from './login.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductService } from './product.service';
+import { SpotifyService } from './spotify.service';
+import { HttpModule } from '../../node_modules/@angular/http';
 
 
 
@@ -31,9 +33,10 @@ import { ProductService } from './product.service';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, SpotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
