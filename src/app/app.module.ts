@@ -1,5 +1,5 @@
+import { AppRouting } from './Routes/app.routing';
 import { LoginService } from './login.service';
-
 import { TruncatePipe } from './truncate.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +16,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProductService } from './product.service';
 import { SpotifyService } from './spotify.service';
 import { HttpModule } from '../../node_modules/@angular/http';
+import { NotFoundComponent } from './Routes/notfound.component';
+import { HomeComponent } from './Routes/home.component';
+import { SpotifyComponent } from './Routes/spotify.component';
+
 
 
 
@@ -28,13 +32,18 @@ import { HttpModule } from '../../node_modules/@angular/http';
     TruncatePipe,
     JumbotronComponent,
     UserFormComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent,
+    HomeComponent,
+    SpotifyComponent
+
   ],
   imports: [
+    AppRouting,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [LoginService, SpotifyService],
   bootstrap: [AppComponent]
