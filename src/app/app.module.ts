@@ -1,4 +1,5 @@
-import { AppRouting } from './Routes/app.routing';
+import { PreventUnsavedChangesGuard } from './prevent-unsaved-changes-guard.service';
+import { appRounting } from './Routes/app.routing';
 import { LoginService } from './login.service';
 import { TruncatePipe } from './truncate.pipe';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,6 +20,7 @@ import { HttpModule } from '../../node_modules/@angular/http';
 import { NotFoundComponent } from './Routes/notfound.component';
 import { HomeComponent } from './Routes/home.component';
 import { SpotifyComponent } from './Routes/spotify.component';
+import { AuthGuard } from './auth-guard.service';
 
 
 
@@ -39,13 +41,13 @@ import { SpotifyComponent } from './Routes/spotify.component';
 
   ],
   imports: [
-    AppRouting,
+    appRounting,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    HttpModule,
+    HttpModule
   ],
-  providers: [LoginService, SpotifyService],
+  providers: [LoginService, AuthGuard, PreventUnsavedChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

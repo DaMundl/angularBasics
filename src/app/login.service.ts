@@ -1,12 +1,22 @@
+import { CanActivate } from '@angular/router';
 import {Injectable} from '@angular/core';
+
 
 @Injectable()
 export class LoginService {
+  isLoggenIn = false;
+
   login(username, password) {
     if ( username === 'lukas' && password === '123') {
-      return true;
+      this.isLoggenIn = true;
     } else {
-      return false;
+      this.isLoggenIn = false;
     }
+    return this.isLoggenIn;
+  }
+
+  logout() {
+    this.isLoggenIn = false;
+    return this.isLoggenIn;
   }
 }
