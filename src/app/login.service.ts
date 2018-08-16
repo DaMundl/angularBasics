@@ -1,4 +1,4 @@
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import {Injectable} from '@angular/core';
 
 
@@ -9,8 +9,10 @@ export class LoginService {
   login(username, password) {
     if ( username === 'lukas' && password === '123') {
       this.isLoggenIn = true;
+      console.log('login successful');
     } else {
       this.isLoggenIn = false;
+      console.log('login failed');
     }
     return this.isLoggenIn;
   }

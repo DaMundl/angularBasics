@@ -3,7 +3,6 @@ import { LoginComponent } from './../login.component';
 import { AuthGuard } from './../auth-guard.service';
 import { UserFormComponent } from './../user-form.component';
 
-import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {NotFoundComponent} from './notfound.component';
@@ -14,14 +13,10 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 
  const routes: Routes = [
 {path: '', component: HomeComponent, canActivate: [AuthGuard]},
-{path: '**', component: NotFoundComponent },
 {path: 'spotify', component: SpotifyComponent, canActivate: [AuthGuard]},
 {path: 'signup', component: UserFormComponent, canActivate: [AuthGuard]},
-{path: 'login', component: LoginComponent, canDeactivate: [PreventUnsavedChangesGuard]}
+{path: 'login', component: LoginComponent, canDeactivate: [PreventUnsavedChangesGuard]},
+{path: '**', component: NotFoundComponent }
 ];
 
-// @NgModule({
-//   imports: [ RouterModule.forRoot(routes)],
-//   exports: [ RouterModule ]
-// })
 export const  appRounting: ModuleWithProviders = RouterModule.forRoot(routes);
