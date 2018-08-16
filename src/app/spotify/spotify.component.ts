@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import { debounceTime } from 'rxjs/operators';
 import { distinctUntilChanged } from 'rxjs/operators';
-import { SpotifyService } from '../spotify.service';
+import { SpotifyService } from './spotify.service';
 
 @Component({
   templateUrl: 'spotify.component.html',

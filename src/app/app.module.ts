@@ -9,20 +9,18 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products.component';
 import { ProductComponent } from './product.component';
 import { RatingComponent } from './rating.component';
-import { UserFormComponent } from './user-form.component';
 import { JumbotronComponent } from './jumbotron.component';
 import { LoginComponent } from './login.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ProductService } from './product.service';
-import { SpotifyService } from './spotify.service';
+
 import { HttpModule } from '@angular/http';
 import { NotFoundComponent } from './Routes/notfound.component';
 import { HomeComponent } from './Routes/home.component';
-import { SpotifyComponent } from './Routes/spotify.component';
 import { AuthGuard } from './auth-guard.service';
-
-
+import { SpotifyModule } from './spotify/spotify.module';
+import { UserModule } from './user/user.module';
+import { spotifyRouting } from './spotify/spotify.routing';
 
 
 @NgModule({
@@ -33,15 +31,15 @@ import { AuthGuard } from './auth-guard.service';
     ProductComponent,
     TruncatePipe,
     JumbotronComponent,
-    UserFormComponent,
     LoginComponent,
     NotFoundComponent,
     HomeComponent,
-    SpotifyComponent
-
   ],
   imports: [
     appRounting,
+    spotifyRouting,
+    SpotifyModule,
+    UserModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
